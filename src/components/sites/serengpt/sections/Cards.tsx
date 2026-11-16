@@ -5,7 +5,7 @@ export function Cards() {
       <section className="container p-bottom-64 p-bottom-40-xs">
         <div className="Text-module__text--BrHx7 flex flex-justify-center flex-justify-start-xsm text-align-start-xsm" data-variant="body-xl" data-color="secondary" data-align="center">
           <div className="col-4 col-12-xsm p-16 p-inline-16-xs">
-            <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-check-circle text-color-brand m-top-16 m-bottom-8" style={{"fontSize": "26px"}} />
+            <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-check-circle m-top-16 m-bottom-8" style={{"fontSize": "26px", "color": "var(--button-brand)"}} />
             <div>
               {"CV compatibles con ATS "}
               <br className="hidden-xsm" />
@@ -13,7 +13,7 @@ export function Cards() {
             </div>
           </div>
           <div className="col-4 col-12-xsm p-16 p-inline-16-xs">
-            <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-design text-color-brand m-top-16 m-bottom-8" style={{"fontSize": "26px"}} />
+            <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-design m-top-16 m-bottom-8" style={{"fontSize": "26px", "color": "var(--button-brand)"}} />
             <div>
               Secciones, fuentes, colores
               <br className="hidden-xsm" />
@@ -21,7 +21,7 @@ export function Cards() {
             </div>
           </div>
           <div className="col-4 col-12-xsm p-16 p-inline-16-xs">
-            <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-columns text-color-brand m-top-16 m-bottom-8" style={{"fontSize": "26px"}} />
+            <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-columns m-top-16 m-bottom-8" style={{"fontSize": "26px", "color": "var(--button-brand)"}} />
             <div>
               {"Diseños de una o dos columnas "}
               <br className="hidden-xsm" />
