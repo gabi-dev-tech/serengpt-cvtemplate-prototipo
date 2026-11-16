@@ -1,0 +1,20 @@
+<svg id="Grupo_637" data-name="Grupo 637" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="69" height="92" viewBox="0 0 69 92">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_459" data-name="Rectángulo 459" width="69" height="92" fill="none" stroke="#fff" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_636" data-name="Grupo 636" clip-path="url(#clip-path)">
+    <path id="Trazado_77" data-name="Trazado 77" d="M33.688,6.75a5.75,5.75,0,0,0-11.5,0H15v11.5H40.875V6.75Z" transform="translate(6.563 0.438)" fill="none" stroke="#fff" stroke-width="2"/>
+    <line id="Línea_47" data-name="Línea 47" y1="3" transform="translate(35 6)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Trazado_78" data-name="Trazado 78" d="M49.563,9H59.625V80.875H5V9H15.063" transform="translate(2.188 3.938)" fill="none" stroke="#fff" stroke-width="2"/>
+    <line id="Línea_48" data-name="Línea 48" x2="17" transform="translate(26 13)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Trazado_79" data-name="Trazado 79" d="M51.313,5H67.125V88.375H1V5H16.813" transform="translate(0.438 2.188)" fill="none" stroke="#fff" stroke-width="2"/>
+    <path id="Trazado_80" data-name="Trazado 80" d="M40.875,47.813V39.188A7.19,7.19,0,0,0,33.688,32l-5.75,5.75L22.188,32A7.19,7.19,0,0,0,15,39.188v8.625" transform="translate(6.563 14)" fill="none" stroke="#e44230" stroke-width="2"/>
+    <line id="Línea_49" data-name="Línea 49" y2="3" transform="translate(35 56)" fill="none" stroke="#e44230" stroke-width="2"/>
+    <circle id="Elipse_8" data-name="Elipse 8" cx="7.5" cy="7.5" r="7.5" transform="translate(27 27)" fill="none" stroke="#e44230" stroke-width="2"/>
+    <line id="Línea_50" data-name="Línea 50" x2="43" transform="translate(13 66)" fill="none" stroke="#fff" stroke-width="2"/>
+    <line id="Línea_51" data-name="Línea 51" x2="43" transform="translate(13 72)" fill="none" stroke="#fff" stroke-width="2"/>
+    <line id="Línea_52" data-name="Línea 52" x2="22" transform="translate(13 78)" fill="none" stroke="#fff" stroke-width="2"/>
+  </g>
+</svg>

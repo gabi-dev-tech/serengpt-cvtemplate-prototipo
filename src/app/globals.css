@@ -2,8 +2,8 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* The Enhancv clone ships its own (source) class names; keep Tailwind from generating utilities for them. */
-@source not "../components/sites/enhancv";
+/* The site components ship their own class names (site.css); keep Tailwind from generating utilities for them. */
+@source not "../components/sites/serengpt";
 
 @custom-variant dark (&:is(.dark *));
 

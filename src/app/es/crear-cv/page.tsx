@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { EditorClient } from "@/components/sites/enhancv/editor/EditorClient";
-import { sampleResume, sampleResumeLong } from "@/components/sites/enhancv/export/sample";
+import { EditorClient } from "@/components/sites/serengpt/editor/EditorClient";
+import { sampleResume, sampleResumeLong } from "@/components/sites/serengpt/export/sample";
 
 export const metadata: Metadata = {
   title: "Crear CV | SerenGPT",

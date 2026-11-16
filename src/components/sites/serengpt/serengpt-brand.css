@@ -1,0 +1,149 @@
+/*
+ * SerenGPT brand layer for the /es page (layout only).
+ * Source: monorepo apps/frontend/docs/sistem-design/SKILL.md + src/styles/globals.scss.
+ * Unlayered on purpose: it wins over every site-* layer of site.css without touching that file.
+ * The CV templates are images (home) or have their own colors (export), so none of this reaches them.
+ */
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/sites/serengpt/fonts/Manrope-Variable-latin.woff2") format("woff2");
+}
+
+:root {
+  /* Cinnabar (brand). The source system puts its solid color on step 400, so the scale is shifted:
+     400/500 = SerenGPT primary-600, 600/700 = primary-700 (hover / brand text). */
+  --primitives-brand-50: #fef3f2;
+  --primitives-brand-100: #ffe4e1;
+  --primitives-brand-200: #ffcdc8;
+  --primitives-brand-300: #ffaba2;
+  --primitives-brand-400: #e44230;
+  --primitives-brand-500: #e44230;
+  --primitives-brand-600: #be2817;
+  --primitives-brand-700: #be2817;
+  --primitives-brand-800: #9d2417;
+  --primitives-brand-900: #82241a;
+  --primitives-brand-950: #470e08;
+
+  /* Accent: ink instead of violet (one cinnabar accent, the rest calm and neutral). */
+  --primitives-purple-50: #f5f6f8;
+  --primitives-purple-100: #eceef2;
+  --primitives-purple-200: #dcdfe6;
+  --primitives-purple-300: #c0c5d1;
+  --primitives-purple-400: #8f97ab;
+  --primitives-purple-500: #5b647c;
+  --primitives-purple-600: #3a4258;
+  --primitives-purple-700: #2b3248;
+  --primitives-purple-800: #212739;
+  --primitives-purple-900: #1a1f2e;
+  --primitives-purple-950: #10131c;
+
+  /* Typography: Manrope everywhere (display, headings, body). */
+  --primitives-font-family-rubik: "Manrope";
+  --primitives-font-family-inter: "Manrope";
+  --text-font-fallback: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Text and neutral buttons on the SerenGPT ink. */
+  --text-primary: #212739;
+  --text-secondary: #6b7280;
+  --text-brand: #be2817;
+  --button-neutral: #212739;
+  --button-neutral-focus: #212739;
+  --button-neutral-hover: #2b3248;
+  --button-neutral-pressed: #1a1f2e;
+}
+
+/* Rules of site.css that name Inter/Rubik directly instead of the font tokens. */
+.font-body,
+.font-body :is(h1, h2, h3, h4, h6, .h1, .h2, .h3, .h4, .h6, .h2-xs, .h3-xsm),
+._3SyHWa_navLink,
+.OA73xG_label,
+.OA73xG_title,
+.OA73xG_subtitle,
+.OA73xG_plainTitle,
+.AWftFq_link,
+.AWftFq_tagline,
+.iZqDMG_title,
+.iZqDMG_tabActive,
+.iZqDMG_tabDark,
+.iZqDMG_panelTitle {
+  font-family: "Manrope", system-ui, sans-serif;
+}
+
+/* ---------- header ---------- */
+._3SyHWa_logo.sg-logo {
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+.sg-logo img {
+  display: block;
+  width: auto;
+  height: 32px;
+}
+@media (max-width: 992px) {
+  .sg-logo img {
+    height: 28px;
+  }
+}
+._3SyHWa_navLink:hover,
+._3SyHWa_navLinkActive {
+  background: #fef3f2;
+  color: #be2817;
+}
+@media (max-width: 992px) {
+  ._3SyHWa_navLink:hover,
+  ._3SyHWa_navLinkActive {
+    background: none;
+  }
+}
+
+/* ---------- footer ---------- */
+.sg-footerBrand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #6b7280;
+  font-size: 14px;
+}
+.sg-footerBrand img {
+  display: block;
+  width: auto;
+  height: 48px;
+}
+.sg-footerContact a {
+  color: #212739;
+  font-weight: 600;
+  text-decoration: none;
+}
+.sg-footerContact a:hover {
+  color: #be2817;
+}
+@media (max-width: 768px) {
+  .sg-footerBrand {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ---------- hero ---------- */
+/* Focal words in cinnabar (site.css paints them violet). */
+.P6Mlfq_headerGradientHome {
+  background: linear-gradient(to left, #f5503e, #be2817);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+/* Calm warm canvas with a soft cinnabar glow instead of the source's green/violet artwork. */
+.P6Mlfq_backgroundImage {
+  inset: 0;
+  background:
+    radial-gradient(ellipse 45% 55% at 82% 62%, rgb(255 205 200 / 0.55), transparent 70%),
+    radial-gradient(ellipse 40% 40% at 55% 85%, rgb(254 243 242 / 0.9), transparent 70%),
+    #f7f6f3;
+}
+.P6Mlfq_backgroundImage img {
+  display: none;
+}

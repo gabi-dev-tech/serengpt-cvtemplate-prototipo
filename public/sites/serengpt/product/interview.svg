@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="84" viewBox="0 0 90 84">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_472" data-name="Rectángulo 472" width="90" height="84" transform="translate(0 0)" fill="none" stroke="#fff" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_649" data-name="Grupo 649" transform="translate(0 0.5)">
+    <g id="Grupo_648" data-name="Grupo 648" transform="translate(0 -0.5)" clip-path="url(#clip-path)">
+      <path id="Trazado_96" data-name="Trazado 96" d="M56,62.227h5.581a4.187,4.187,0,0,0,4.186-4.186V16.186A4.187,4.187,0,0,0,61.581,12H56" transform="translate(22.131 5.289)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_90" data-name="Línea 90" x2="11" transform="translate(39 68)" fill="none" stroke="#fff" stroke-width="2"/>
+      <path id="Trazado_97" data-name="Trazado 97" d="M10.766,12H5.186A4.187,4.187,0,0,0,1,16.186V58.042a4.187,4.187,0,0,0,4.186,4.186h5.581" transform="translate(0.395 5.289)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_91" data-name="Línea 91" x1="11" transform="translate(39 18)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_92" data-name="Línea 92" y2="6" transform="translate(16 19)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_93" data-name="Línea 93" y1="6" transform="translate(34 19)" fill="none" stroke="#fff" stroke-width="2"/>
+      <circle id="Elipse_12" data-name="Elipse 12" cx="5.5" cy="5.5" r="5.5" transform="translate(20 7)" fill="none" stroke="#fff" stroke-width="2"/>
+      <path id="Trazado_98" data-name="Trazado 98" d="M8,23.138V13.371A8.374,8.374,0,0,1,16.371,5h1.4" transform="translate(3.162 2.523)" fill="none" stroke="#fff" stroke-width="2"/>
+      <path id="Trazado_99" data-name="Trazado 99" d="M30.766,23.138V13.371A8.374,8.374,0,0,0,22.4,5H21" transform="translate(8.299 2.523)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_94" data-name="Línea 94" x2="20" transform="translate(15 2)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_95" data-name="Línea 95" y2="6" transform="translate(56 19)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_96" data-name="Línea 96" y1="6" transform="translate(72 19)" fill="none" stroke="#fff" stroke-width="2"/>
+      <circle id="Elipse_13" data-name="Elipse 13" cx="5.5" cy="5.5" r="5.5" transform="translate(59 7)" fill="none" stroke="#fff" stroke-width="2"/>
+      <path id="Trazado_100" data-name="Trazado 100" d="M36,23.138V13.371A8.374,8.374,0,0,1,44.371,5h1.4" transform="translate(14.227 2.523)" fill="none" stroke="#fff" stroke-width="2"/>
+      <path id="Trazado_101" data-name="Trazado 101" d="M58.766,23.138V13.371A8.374,8.374,0,0,0,50.4,5H49" transform="translate(19.365 2.523)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_97" data-name="Línea 97" x2="19" transform="translate(55 2)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_98" data-name="Línea 98" y1="7" transform="translate(72 59)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_99" data-name="Línea 99" y2="7" transform="translate(56 59)" fill="none" stroke="#fff" stroke-width="2"/>
+      <circle id="Elipse_14" data-name="Elipse 14" cx="5.5" cy="5.5" r="5.5" transform="translate(59 68)" fill="none" stroke="#fff" stroke-width="2"/>
+      <path id="Trazado_102" data-name="Trazado 102" d="M58.766,42v9.766A8.374,8.374,0,0,1,50.4,60.138H49" transform="translate(19.365 17.146)" fill="none" stroke="#fff" stroke-width="2"/>
+      <path id="Trazado_103" data-name="Trazado 103" d="M36,42v9.766a8.374,8.374,0,0,0,8.371,8.371h1.4" transform="translate(14.227 17.146)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_100" data-name="Línea 100" x1="19" transform="translate(55 83)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_101" data-name="Línea 101" y1="7" transform="translate(34 59)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_102" data-name="Línea 102" y2="7" transform="translate(16 59)" fill="none" stroke="#fff" stroke-width="2"/>
+      <circle id="Elipse_15" data-name="Elipse 15" cx="5.5" cy="5.5" r="5.5" transform="translate(20 68)" fill="none" stroke="#fff" stroke-width="2"/>
+      <path id="Trazado_104" data-name="Trazado 104" d="M30.766,42v9.766A8.374,8.374,0,0,1,22.4,60.138H21" transform="translate(8.299 17.146)" fill="none" stroke="#fff" stroke-width="2"/>
+      <path id="Trazado_105" data-name="Trazado 105" d="M8,42v9.766a8.374,8.374,0,0,0,8.371,8.371h1.4" transform="translate(3.162 17.146)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_103" data-name="Línea 103" x1="20" transform="translate(15 83)" fill="none" stroke="#fff" stroke-width="2"/>
+      <line id="Línea_104" data-name="Línea 104" y2="16" transform="translate(39 34)" fill="none" stroke="#fff" stroke-width="2"/>
+      <rect id="Rectángulo_470" data-name="Rectángulo 470" width="23" height="25" transform="translate(11 30)" fill="#e44230" stroke="#e44230" stroke-width="2"/>
+      <line id="Línea_105" data-name="Línea 105" y2="16" transform="translate(78 34)" fill="none" stroke="#fff" stroke-width="2"/>
+      <path id="Trazado_132" data-name="Trazado 132" d="M0,0H47.131V25.15H0V0Z" transform="translate(31 29.946)" fill="#e44230" stroke="#e44230" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

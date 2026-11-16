@@ -1,5 +1,5 @@
-import { EnhancvHome } from "@/components/sites/enhancv/EnhancvHome";
+import { SerenHome } from "@/components/sites/serengpt/SerenHome";
 
-export default function EnhancvEsPage() {
-  return <EnhancvHome />;
+export default function SerenEsPage() {
+  return <SerenHome />;
 }

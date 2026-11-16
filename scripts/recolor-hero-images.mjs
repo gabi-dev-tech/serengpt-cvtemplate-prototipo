@@ -1,11 +1,11 @@
-// Recolors the hero resume screenshots (public/sites/enhancv/fold-section_es_resume*.webp) to the
-// SerenGPT palette and swaps the Enhancv branding for SerenGPT. Originals are never modified.
+// Recolors the hero resume screenshots (scripts/hero-originals/fold-section_es_resume*.webp) to the
+// SerenGPT palette and swaps the third-party branding for SerenGPT. Originals are never modified.
 // Run: node scripts/recolor-hero-images.mjs
 import { mkdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
-const SRC_DIR = "public/sites/enhancv";
+const SRC_DIR = "scripts/hero-originals";
 const OUT_DIR = "public/sites/serengpt/hero";
 
 // Tokens from monorepo apps/frontend/src/styles/globals.scss (light theme).
@@ -27,7 +27,7 @@ const FONT = "Segoe UI, Arial, sans-serif";
 /**
  * Per image: `regions` are checked in order and the first one containing a pixel wins.
  * A region either protects its pixels (photos, palette swatches) or replaces the default rules.
- * `brand` patches cover Enhancv marks: a rotated rect in `bg` anchored at the text's left baseline.
+ * `brand` patches cover third-party marks: a rotated rect in `bg` anchored at the text's left baseline.
  */
 const IMAGES = [
   {

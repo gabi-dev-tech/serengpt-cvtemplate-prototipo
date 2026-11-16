@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { ExportPage } from "@/components/sites/enhancv/export/ExportPage";
-import { sampleResume, sampleResumeLong } from "@/components/sites/enhancv/export/sample";
+import { ExportPage } from "@/components/sites/serengpt/export/ExportPage";
+import { sampleResume, sampleResumeLong } from "@/components/sites/serengpt/export/sample";
 
 export const metadata: Metadata = {
   title: "Exportar CV a Word | SerenGPT",
