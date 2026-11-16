@@ -1,3 +1,4 @@
+import { sg } from "../serengpt-links";
 /* eslint-disable @next/next/no-img-element -- source images are served as-is from public/sites/enhancv to keep their exact crop and sizing */
 export function Support() {
   return (
@@ -47,12 +48,12 @@ export function Support() {
               <p className="Text-module__text--BrHx7 m-bottom-24" data-variant="body-m" data-color="inverse">Sin guiones. Sin conversaciones interminables con chatbots. Solo respuestas reales de expertos que conocen el producto.</p>
               <div className="flex flex-direction-column-xsm GtR5ya_buttonRow">
                 <div className="GtR5ya_buttonCell">
-                  <a target="_blank" href="https://help.enhancv.com/en/" className="Button-module__button--bJF6M GtR5ya_bandButton" data-button-color="awake" data-size="md" data-type="primary">
+                  <a target="_blank" href={sg.contacts} className="Button-module__button--bJF6M GtR5ya_bandButton" data-button-color="awake" data-size="md" data-type="primary">
                     <span className="Button-module__label--V1tZC">Ir al Centro de ayuda</span>
                   </a>
                 </div>
                 <div className="GtR5ya_buttonCell">
-                  <a target="_blank" href="mailto:support@enhancv.com" className="Button-module__button--bJF6M GtR5ya_bandButton button-white-outline" data-button-color="subtle" data-size="md" data-type="secondary">
+                  <a target="_blank" href={sg.contacts} className="Button-module__button--bJF6M GtR5ya_bandButton button-white-outline" data-button-color="subtle" data-size="md" data-type="secondary">
                     <span className="Button-module__icon---bzmi" aria-hidden="true">
                       <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-mail" />
                     </span>

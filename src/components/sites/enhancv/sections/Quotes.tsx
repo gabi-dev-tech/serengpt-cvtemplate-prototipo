@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { cx } from "../cx";
 import { quotes } from "../data";
+import { sg } from "../serengpt-links";
 
 /** Testimonials card; the source rotates it every ~4 s and the dots jump to a quote. */
 export function Quotes() {
@@ -60,7 +61,7 @@ export function Quotes() {
             <div className="col-7 col-12-xsm col-12-md order-first-xsm order-first-md text-align-center-xsm p-bottom-32 p-left-16-lg p-left-16-md">
               <h2 className="h2 h3-xsm m-top-0 m-bottom-32 m-bottom-16 text-color-inverse">Tu CV es una extensión de ti mismo. Haz uno que realmente sea tú.</h2>
               <div className="flex">
-                <a href="https://app.enhancv.com/" className="Button-module__button--bJF6M m-bottom-32 m-inline-auto-xsm" data-button-color="brand" data-size="lg" data-type="primary">
+                <a href={sg.myCv} className="Button-module__button--bJF6M m-bottom-32 m-inline-auto-xsm" data-button-color="brand" data-size="lg" data-type="primary">
                   <span className="Button-module__label--V1tZC">Crea Tu CV</span>
                 </a>
               </div>

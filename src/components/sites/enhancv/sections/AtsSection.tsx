@@ -1,3 +1,4 @@
+import { sg } from "../serengpt-links";
 /* eslint-disable @next/next/no-img-element -- source images are served as-is from public/sites/enhancv to keep their exact crop and sizing */
 export function AtsSection() {
   return (
@@ -19,7 +20,7 @@ export function AtsSection() {
                 <h3 className="Text-module__text--BrHx7 m-top-32-xsm m-top-32 dn9FIq_homeTitle m-bottom-16" data-variant="heading-xl" data-color="inverse">CV online optimizados para sistemas de seguimiento de candidatos (ATS)</h3>
                 <p className="Text-module__text--BrHx7 m-bottom-48 m-bottom-24-xsm" data-variant="body-l" data-color="inverse">Cada modelo de CV y de carta de presentación de Enhancv se prueba en sistemas ATS reales para asegurar que pueda superar cualquier filtro de selección.</p>
                 <div className="flex hidden-xsm">
-                  <a href="https://app.enhancv.com/" className="Button-module__button--bJF6M m-inline-auto-xsm" data-button-color="brand" data-size="lg" data-type="primary">
+                  <a href={sg.myCv} className="Button-module__button--bJF6M m-inline-auto-xsm" data-button-color="brand" data-size="lg" data-type="primary">
                     <span className="Button-module__label--V1tZC">Crea un CV apto para ATS</span>
                   </a>
                 </div>
@@ -51,7 +52,7 @@ export function AtsSection() {
                     </div>
                   </div>
                   <div className="flex hidden-mxl m-top-32-xsm m-left-auto-xsm m-right-auto-xsm">
-                    <a href="https://app.enhancv.com/" className="Button-module__button--bJF6M m-inline-auto-xsm dn9FIq_bandButton" data-button-color="brand" data-size="lg" data-type="primary">
+                    <a href={sg.myCv} className="Button-module__button--bJF6M m-inline-auto-xsm dn9FIq_bandButton" data-button-color="brand" data-size="lg" data-type="primary">
                       <span className="Button-module__label--V1tZC">Crea un CV apto para ATS</span>
                     </a>
                   </div>

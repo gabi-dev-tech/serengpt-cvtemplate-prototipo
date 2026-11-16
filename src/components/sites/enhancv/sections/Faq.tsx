@@ -1,3 +1,4 @@
+import { sg } from "../serengpt-links";
 export function Faq() {
   return (
     <div data-section="FAQ" style={{"display": "contents"}}>
@@ -17,7 +18,7 @@ export function Faq() {
               <br />
               <br />
               {"Más que enumerar información, el currículum sirve para mostrar qué sabes hacer y cómo puedes aportar valor en el rol al que te postulas. Es lo primero que una empresa ve de ti, por lo que debe ser fácil de leer y estar muy bien organizado. Por eso conviene que aprendas a "}
-              <a href="https://enhancv.com/es/blog/como-hacer-cv-perfecto/">hacer un buen CV</a>
+              <a href={sg.blog}>hacer un buen CV</a>
               , para que quien lo lea entienda rápidamente por qué encajas en el puesto.
             </div>
           </details>
@@ -38,24 +39,24 @@ export function Faq() {
                 <li>Selecciona la información relevante: Incluye solo experiencia y formación que le aporten valor al puesto. Evita añadir información irrelevante para la oferta.</li>
                 <li>
                   {"Redacta un "}
-                  <a href="https://enhancv.com/es/blog/perfil-profesional/">perfil profesional</a>
+                  <a href={sg.blog}>perfil profesional</a>
                   : Resume en pocas líneas quién eres, qué haces y qué puedes aportar. Debe ser claro y directo.
                 </li>
                 <li>
                   {"Destaca "}
-                  <a href="https://enhancv.com/es/blog/logros-profesionales/">logros concretos</a>
+                  <a href={sg.blog}>logros concretos</a>
                   : Explica resultados o mejoras que hayas conseguido en trabajos anteriores, para que el empleador vea de qué eres capaz en la práctica.
                 </li>
                 <li>
                   {"Organiza bien la "}
-                  <a href="https://enhancv.com/es/blog/estructura-cv/">estructura del CV</a>
+                  <a href={sg.blog}>estructura del CV</a>
                   : Usa un orden lógico y fácil de leer. La claridad ayuda a que el empleador entienda tu perfil rápido y no sienta que pierde el tiempo.
                 </li>
                 <li>Incluye habilidades clave: Añade competencias relacionadas con el puesto al que te postulas. Así refuerzas la idea de que eres el candidato ideal.</li>
                 <li>Revisa y corrige: Asegúrate de que no haya errores y de que el CV sea claro, coherente y fácil de leer.</li>
                 <li>
                   {"Descarga en PDF: Por último, descargar el documento en PDF te servirá tanto para "}
-                  <a href="https://enhancv.com/es/blog/como-enviar-un-curriculum-por-correo/">enviar el currículum por correo</a>
+                  <a href={sg.blog}>enviar el currículum por correo</a>
                   {" como para imprimirlo y presentarlo en persona."}
                 </li>
               </ul>
@@ -79,29 +80,29 @@ export function Faq() {
                 <li>Información personal y de contacto: Nombre completo, teléfono activo y correo profesional. Evita datos irrelevantes como dirección completa o estado civil.</li>
                 <li>Perfil profesional: Párrafo breve que resuma tu especialidad, experiencia, logros principales y fortalezas. Evita frases genéricas sin información concreta o diferenciadora.</li>
                 <li>
-                  <a href="https://enhancv.com/es/blog/objetivo-curriculum/">Objetivo profesional</a>
+                  <a href={sg.blog}>Objetivo profesional</a>
                   : Define qué tipo de puesto quieres, hacia dónde quieres orientar tu carrera y cómo encaja eso con lo que la empresa necesita.
                 </li>
                 <li>
-                  <a href="https://enhancv.com/es/blog/experiencia-laboral-cv/">Experiencia laboral</a>
+                  <a href={sg.blog}>Experiencia laboral</a>
                   : Trabajos recientes con el nombre de la empresa, fechas, funciones que desempeñaste y resultados que conseguiste.
                 </li>
                 <li>
-                  <a href="https://enhancv.com/es/blog/formacion-academica-curriculum/">Formación académica</a>
+                  <a href={sg.blog}>Formación académica</a>
                   : Incluye título obtenido, centro de estudios y fechas. Añade solo estudios relevantes y evita formación que no aporte valor.
                 </li>
                 <li>
-                  <a href="https://enhancv.com/es/blog/habilidades-cv/">Habilidades</a>
+                  <a href={sg.blog}>Habilidades</a>
                   : Selecciona competencias relacionadas con el puesto. Evita listas extensas y prioriza habilidades demostrables y específicas.
                 </li>
                 <li>
-                  <a href="https://enhancv.com/es/blog/otros-datos-de-interes-curriculum/">Otros datos de interés en el CV</a>
+                  <a href={sg.blog}>Otros datos de interés en el CV</a>
                   : Según el rol al que te postulas, puedes añadir también:
                   <ul>
                     <li>Disponibilidad</li>
                     <li>Idiomas</li>
                     <li>
-                      <a href="https://enhancv.com/es/blog/referencias-en-curriculum/">Referencias</a>
+                      <a href={sg.blog}>Referencias</a>
                     </li>
                   </ul>
                 </li>
@@ -118,12 +119,12 @@ export function Faq() {
             </summary>
             <div className="_FGp6a_faqText m-bottom-16">
               {"Sí, los currículums de Enhancv están optimizados para superar los filtros de los "}
-              <a href="https://enhancv.com/es/ejemplos-de-cv/ats/">ATS</a>
+              <a href={sg.myCv}>ATS</a>
               , que muchas empresas utilizan para automatizar la revisión y selección de los documentos.
               <br />
               <br />
               {"Diseñamos nuestras "}
-              <a href="https://enhancv.com/es/plantillas-de-cv/">plantillas de CV</a>
+              <a href={sg.myCv}>plantillas de CV</a>
               {" con una estructura muy clara, con secciones universalmente reconocibles y con un formato que facilita el escaneo y la lectura completa por parte de los ATS."}
               <br />
               <br />
@@ -131,7 +132,7 @@ export function Faq() {
               <br />
               <br />
               {"Después de hacer tu currículum gratis, puedes usar este "}
-              <a href="https://enhancv.com/es/cv-checker/">Analizador de CV</a>
+              <a href={sg.employability}>Analizador de CV</a>
               , que con ayuda de IA revisa tu contenido y te indica si está bien planteado o qué puedes mejorar para que pase los filtros sin problemas.
             </div>
           </details>
@@ -145,7 +146,7 @@ export function Faq() {
             </summary>
             <div className="_FGp6a_faqText m-bottom-16">
               {"Lo ideal es "}
-              <a href="https://enhancv.com/es/blog/actualizar-cv/">actualizar el CV</a>
+              <a href={sg.blog}>actualizar el CV</a>
               {" cada vez que haya un cambio relevante en tu perfil, como un nuevo trabajo, un proyecto importante, una certificación o una habilidad que aporte valor."}
               <br />
               <br />
@@ -192,25 +193,25 @@ export function Faq() {
             </summary>
             <div className="_FGp6a_faqText m-bottom-16">
               {"Para "}
-              <a href="https://app.enhancv.com/">crear un CV con Enhancv</a>
+              <a href={sg.myCv}>crear un CV con SerenGPT</a>
               , sigue estos sencillos pasos:
               <ul>
                 <li>Sube tu CV anterior o selecciona tu puesto de trabajo para elegir la plantilla de CV más adecuada. En este momento, puedes empezar a editar tu CV o registrarte para guardar tu trabajo.</li>
                 <li>Rellena los datos básicos de tu información de contacto, así como el titular de tu CV.</li>
                 <li>
                   {"Arrastra y suelta las secciones de tu CV según "}
-                  <a href="https://enhancv.com/es/blog/tipos-de-curriculum/">el mejor formato de CV para tu situación</a>
+                  <a href={sg.blog}>el mejor formato de CV para tu situación</a>
                   {". El más adecuado es el formato de "}
-                  <a href="https://enhancv.com/es/blog/curriculum-cronologico/">CV cronológico inverso</a>
+                  <a href={sg.blog}>CV cronológico inverso</a>
                   {". Sin embargo, si estás cambiando de profesión o acabas de entrar en el mercado laboral, puedes elegir entre el CV híbrido o el "}
-                  <a href="https://enhancv.com/es/blog/cv-funcional/">CV funcional</a>
+                  <a href={sg.blog}>CV funcional</a>
                   .
                 </li>
                 <li>
                   {"Escribe un "}
-                  <a href="https://enhancv.com/es/blog/descripcion-para-cv/">resumen memorable del CV</a>
+                  <a href={sg.blog}>resumen memorable del CV</a>
                   {" o un objetivo del CV si estás creando un "}
-                  <a href="https://enhancv.com/es/ejemplos-de-cv/cv-sin-experiencia/">CV para tu primer empleo</a>
+                  <a href={sg.myCv}>CV para tu primer empleo</a>
                   .
                 </li>
                 <li>Describe tu experiencia laboral en el CV, empezando por el trabajo más reciente. Enhancv te animará a pensar más allá del diseño estándar del CV.</li>
@@ -250,13 +251,13 @@ export function Faq() {
               <br />
               <br />
               {"Con Enhancv puedes crear tu propia plantilla o empezar con una de las nuestras. En nuestro sitio web encontrarás plantillas de CV "}
-              <a href="https://enhancv.com/es/plantillas-de-cv/creativo/">creativas</a>
+              <a href={sg.myCv}>creativas</a>
               {", "}
-              <a href="https://enhancv.com/es/plantillas-de-cv/tradicional/">tradicionales</a>
+              <a href={sg.myCv}>tradicionales</a>
               {", "}
-              <a href="https://enhancv.com/es/plantillas-de-cv/simple/">sencillas</a>
+              <a href={sg.myCv}>sencillas</a>
               {" y "}
-              <a href="https://enhancv.com/es/plantillas-de-cv/moderno/">modernas</a>
+              <a href={sg.myCv}>modernas</a>
               , en una amplia gama de colores. Puedes personalizar fuentes, márgenes, diseño, encabezados de sección y mucho más.
               <br />
               <br />

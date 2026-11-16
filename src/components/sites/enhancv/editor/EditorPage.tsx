@@ -1,7 +1,6 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element -- static SVG brand assets */
-import { ArrowDownUp, Contrast, Download, Eye, FileText, History, LayoutTemplate, Redo2, RotateCcw, Undo2, UserRound } from "lucide-react";
+import { ArrowDownUp, Contrast, Download, Eye, FileText, LayoutTemplate, RotateCcw } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "../export/export.css";
 import { downloadResumeDocx } from "../export/download";
@@ -12,6 +11,7 @@ import { templateById, type TemplateConfig } from "../export/templates";
 import type { PageAssignment, ResumeData } from "../export/types";
 import { customize, defaultCustom, type Custom } from "./customize";
 import { DesignPanel } from "./DesignPanel";
+import { SerenNavbar } from "../SerenNavbar";
 import "../topbar.css";
 import "./editor.css";
 import { photoFromFile } from "./photo";
@@ -39,17 +39,6 @@ const PAGE_PX = (page.width * 4) / 3; // A4 width in CSS px at 100 %
 const PAGE_MAX = 740; // width of the page in the reference editor at desktop sizes
 const isNarrow = () => window.matchMedia("(max-width: 991px)").matches;
 const TYPING_GROUP_MS = 1200;
-
-/** Toolbar entries of the reference editor that this local version does not implement yet. */
-function SoonButton({ icon, label }: { icon: React.ReactNode; label: string }) {
-  return (
-    <button type="button" className="sge-tool" aria-disabled="true" title="Disponible próximamente">
-      {icon}
-      <span className="sge-toolLabel">{label}</span>
-    </button>
-  );
-}
-
 /** Present state plus undo/redo stacks; consecutive typing in one field counts as one step. */
 function useHistory(initial: () => EditorState) {
   const [h, setH] = useState(() => ({ past: [] as EditorState[], present: initial(), future: [] as EditorState[] }));
@@ -213,7 +202,7 @@ export function EditorPage({ data: sample, initialTemplate }: { data: ResumeData
       const el = e.target as HTMLElement;
       // Pointing anywhere but another field ends the editing of the current one (no focus restore).
       if (!el.closest(".sgx-edit")) active.current = null;
-      if (el.closest(".sge-selBar, .sge-pop, .sgr-overlay, .sge-panel, .sge-tools, .sge-top")) return;
+      if (el.closest(".sge-selBar, .sge-pop, .sgr-overlay, .sge-panel, .sge-tools, .sgn-header")) return;
       const hit = el.closest<HTMLElement>(".sgx-pagesView [data-entry]");
       setSelection(hit ? parseEntry(hit.dataset.entry!) : null);
     };
@@ -299,11 +288,12 @@ export function EditorPage({ data: sample, initialTemplate }: { data: ResumeData
 
   return (
     <div className={rootClass}>
-      <header className="sge-top">
-        <div className="sge-topLeft">
-          <a href="/es" className="sge-home" aria-label="Inicio de SerenGPT">
-            <img src="/sites/serengpt/serengpt-mark.svg" alt="" width="26" height="26" />
-            <span>Inicio</span>
+      <SerenNavbar />
+
+      <nav className="sge-tools" aria-label="Herramientas del editor">
+        <div className="sge-toolsLeft">
+          <a href="/es" className="sge-home" aria-label="Volver al inicio">
+            <span>← Inicio</span>
           </a>
           <span className="sge-sep" aria-hidden="true" />
           <span className="sge-doc">
@@ -312,7 +302,33 @@ export function EditorPage({ data: sample, initialTemplate }: { data: ResumeData
             <span className="sge-saved">(Guardado en este navegador)</span>
           </span>
         </div>
-        <div className="sge-topRight">
+        <div className="sge-toolsCenter">
+          <button type="button" className={reorder ? "sge-tool sge-toolActive" : "sge-tool"} aria-haspopup="dialog" onClick={() => setReorder(true)}>
+            <ArrowDownUp aria-hidden="true" />
+            <span className="sge-toolLabel">Reorganizar secciones</span>
+          </button>
+          <button
+            type="button"
+            className={panelOpen && panelKind === "plantillas" ? "sge-tool sge-toolActive" : "sge-tool"}
+            aria-expanded={panelOpen && panelKind === "plantillas"}
+            aria-controls="sge-templates"
+            onClick={() => togglePanel("plantillas")}
+          >
+            <LayoutTemplate aria-hidden="true" />
+            <span className="sge-toolLabel">Plantillas</span>
+          </button>
+          <button
+            type="button"
+            className={panelOpen && panelKind === "diseno" ? "sge-tool sge-toolActive" : "sge-tool"}
+            aria-expanded={panelOpen && panelKind === "diseno"}
+            aria-controls="sge-templates"
+            onClick={() => togglePanel("diseno")}
+          >
+            <Contrast aria-hidden="true" />
+            <span className="sge-toolLabel">Diseño y Fuente</span>
+          </button>
+        </div>
+        <div className="sge-toolsRight">
           {confirmReset ? (
             <span className="sge-confirm" role="group" aria-label="Volver al CV de ejemplo">
               ¿Volver al CV de ejemplo?
@@ -343,78 +359,13 @@ export function EditorPage({ data: sample, initialTemplate }: { data: ResumeData
             <Download aria-hidden="true" />
             <span>{status === "working" ? "Generando…" : "Descargar .docx"}</span>
           </button>
-          <span className="sge-avatar" aria-hidden="true">
-            <UserRound />
-          </span>
         </div>
-      </header>
+      </nav>
       {status === "error" && (
         <p className="sge-error" role="alert">
           {error}
         </p>
       )}
-
-      <nav className="sge-tools" aria-label="Herramientas del editor">
-        <div className="sge-toolsLeft" />
-        <div className="sge-toolsCenter">
-          <button type="button" className={reorder ? "sge-tool sge-toolActive" : "sge-tool"} aria-haspopup="dialog" onClick={() => setReorder(true)}>
-            <ArrowDownUp aria-hidden="true" />
-            <span className="sge-toolLabel">Reorganizar secciones</span>
-          </button>
-          <button
-            type="button"
-            className={panelOpen && panelKind === "plantillas" ? "sge-tool sge-toolActive" : "sge-tool"}
-            aria-expanded={panelOpen && panelKind === "plantillas"}
-            aria-controls="sge-templates"
-            onClick={() => togglePanel("plantillas")}
-          >
-            <LayoutTemplate aria-hidden="true" />
-            <span className="sge-toolLabel">Plantillas</span>
-          </button>
-          <button
-            type="button"
-            className={panelOpen && panelKind === "diseno" ? "sge-tool sge-toolActive" : "sge-tool"}
-            aria-expanded={panelOpen && panelKind === "diseno"}
-            aria-controls="sge-templates"
-            onClick={() => togglePanel("diseno")}
-          >
-            <Contrast aria-hidden="true" />
-            <span className="sge-toolLabel">Diseño y Fuente</span>
-          </button>
-        </div>
-        <div className="sge-toolsRight">
-          <button
-            type="button"
-            className="sge-tool sge-iconOnly"
-            aria-label="Deshacer"
-            title="Deshacer (Ctrl+Z)"
-            disabled={!history.canUndo}
-            onClick={() => {
-              active.current = null;
-              undo();
-              setVersion((v) => v + 1);
-            }}
-          >
-            <Undo2 aria-hidden="true" />
-          </button>
-          <button
-            type="button"
-            className="sge-tool sge-iconOnly"
-            aria-label="Rehacer"
-            title="Rehacer (Ctrl+Shift+Z)"
-            disabled={!history.canRedo}
-            onClick={() => {
-              active.current = null;
-              redo();
-              setVersion((v) => v + 1);
-            }}
-          >
-            <Redo2 aria-hidden="true" />
-          </button>
-          <span className="sge-sep" aria-hidden="true" />
-          <SoonButton icon={<History aria-hidden="true" />} label="Historial" />
-        </div>
-      </nav>
 
       {panelOpen && <div className="sge-backdrop" onClick={() => setPanel("closed")} aria-hidden="true" />}
       <aside id="sge-templates" className="sge-panel" hidden={!panelOpen} aria-label={panelKind === "plantillas" ? "Plantillas" : "Diseño y Fuente"}>

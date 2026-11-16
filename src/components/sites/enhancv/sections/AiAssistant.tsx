@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { cx } from "../cx";
+import { sg } from "../serengpt-links";
 
 export function AiAssistant() {
   const [active, setActive] = useState(0);
@@ -99,7 +100,7 @@ export function AiAssistant() {
                   </div>
                 </div>
                 <div className="col-auto flex flex-justify-start">
-                  <a href="https://enhancv.com/es/creador-cv-ia/" className="Button-module__button--bJF6M m-top-16" data-button-color="awake" data-size="md" data-type="link">
+                  <a href={sg.myCv} className="Button-module__button--bJF6M m-top-16" data-button-color="awake" data-size="md" data-type="link">
                     <span className="Button-module__label--V1tZC">Descubre la IA de Enhancv</span>
                     <span className="Button-module__icon---bzmi" aria-hidden="true">
                       <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-arrow-right" />

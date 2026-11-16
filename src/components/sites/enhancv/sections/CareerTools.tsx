@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { cx } from "../cx";
+import { sg } from "../serengpt-links";
 
 export function CareerTools() {
   const [active, setActive] = useState(0);
@@ -34,7 +35,7 @@ export function CareerTools() {
               <div className="iZqDMG_panelText iZqDMG_text iZqDMG_onDark">
                 <div className="_6KASKq_richText">
                   {"Tu búsqueda empieza por el CV. El "}
-                  <a href="https://enhancv.com/es/creador-cv-ia/">creador de CV con IA</a>
+                  <a href={sg.myCv}>creador de CV con IA</a>
                   {" de Enhancv redacta y pule cada sección contigo, y luego adapta el CV a cada empleo en minutos."}
                 </div>
               </div>
@@ -71,7 +72,7 @@ export function CareerTools() {
               <div className="iZqDMG_panelText iZqDMG_text iZqDMG_onDark">
                 <div className="_6KASKq_richText">
                   {"Antes de enviarlo, pásalo por el "}
-                  <a href="https://enhancv.com/es/cv-checker/">revisor de CV</a>
+                  <a href={sg.employability}>revisor de CV</a>
                   : un análisis completo del contenido, el formato y la compatibilidad con ATS, con correcciones que puedes aplicar al instante.
                 </div>
               </div>
@@ -108,7 +109,7 @@ export function CareerTools() {
               <div className="iZqDMG_panelText iZqDMG_text iZqDMG_onDark">
                 <div className="_6KASKq_richText">
                   {"Cuando un puesto la pide, el "}
-                  <a href="https://enhancv.com/es/generador-de-cartas-de-presentacion/">generador de cartas de presentación con IA</a>
+                  <a href={sg.coverLetter}>generador de cartas de presentación con IA</a>
                   {" escribe una carta adaptada a partir de tu CV y de la oferta de empleo, con un diseño que hace juego."}
                 </div>
               </div>
@@ -145,7 +146,7 @@ export function CareerTools() {
               <div className="iZqDMG_panelText iZqDMG_text iZqDMG_onDark">
                 <div className="_6KASKq_richText">
                   {"Olvídate de la página en blanco. Sube tu CV actual o pega tu "}
-                  <a href="https://enhancv.com/es/generador-de-curriculum-linkedin/">perfil de LinkedIn</a>
+                  <a href={sg.myPhoto}>perfil de LinkedIn</a>
                   {" y Enhancv lo convierte en un borrador listo para los reclutadores."}
                 </div>
               </div>

@@ -1,3 +1,4 @@
+import { sg } from "../serengpt-links";
 export function Cards() {
   return (
     <div data-section="Cards" style={{"display": "contents"}}>
@@ -27,7 +28,7 @@ export function Cards() {
               {" y de varias páginas"}
             </div>
           </div>
-          <a href="https://enhancv.com/es/plantillas-de-cv/" className="Button-module__button--bJF6M m-left-16-xsm m-top-24-xsm" data-button-color="awake" data-size="md" data-type="link">
+          <a href={sg.myCv} className="Button-module__button--bJF6M m-left-16-xsm m-top-24-xsm" data-button-color="awake" data-size="md" data-type="link">
             <span className="Button-module__label--V1tZC">Explora plantillas de CV</span>
             <span className="Button-module__icon---bzmi" aria-hidden="true">
               <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-arrow-right" />

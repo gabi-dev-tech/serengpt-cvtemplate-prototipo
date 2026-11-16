@@ -55,7 +55,7 @@
 
 .sgx-toolbar {
   position: sticky;
-  top: 0;
+  top: var(--sgn-h);
   z-index: 10;
   background: #fff;
   border-bottom: 1px solid #e5e7eb;
@@ -69,15 +69,6 @@
   max-width: 1040px;
   margin: 0 auto;
   padding: 12px 16px;
-}
-.sgx-logo {
-  display: flex;
-  flex: none;
-}
-.sgx-logo img {
-  display: block;
-  width: auto;
-  height: 28px;
 }
 .sgx-back {
   color: #6b7280;
@@ -321,9 +312,6 @@
 @media (max-width: 640px) {
   .sgx-title span {
     display: none;
-  }
-  .sgx-logo img {
-    height: 24px;
   }
   .sgx-toolbarInner {
     flex-wrap: wrap;

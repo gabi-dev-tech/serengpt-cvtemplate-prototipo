@@ -12,6 +12,7 @@
   --sge-surface: #f7f6f3;
   --sge-panel-w: 300px;
   --sge-side: 72px;
+  --sge-tools-h: 44px;
   min-height: 100vh;
   background: var(--sge-surface);
   color: var(--sge-text);
@@ -24,7 +25,7 @@
   font: inherit;
 }
 
-/* ---------- top bar: shared with the home page, see ../topbar.css ---------- */
+/* ---------- document info (left of the tools bar); shared controls in ../topbar.css ---------- */
 .sge-doc {
   display: flex;
   align-items: center;
@@ -54,12 +55,13 @@
 /* ---------- tools bar ---------- */
 .sge-tools {
   position: sticky;
-  top: 40px;
+  top: var(--sgn-h);
   z-index: 29;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  height: 36px;
+  gap: 12px;
+  height: var(--sge-tools-h);
   padding: 0 12px;
   background: #fff;
   border-bottom: 1px solid var(--sge-border);
@@ -70,6 +72,10 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  min-width: 0;
+}
+.sge-toolsLeft {
+  gap: 12px;
 }
 .sge-toolsRight {
   justify-content: flex-end;
@@ -125,7 +131,7 @@
 /* ---------- templates panel ---------- */
 .sge-panel {
   position: fixed;
-  top: 84px;
+  top: calc(var(--sgn-h) + var(--sge-tools-h) + 8px);
   bottom: 8px;
   left: 8px;
   z-index: 20;
@@ -351,21 +357,35 @@
     z-index: 40;
     background: rgb(33 39 57 / 0.35);
   }
+  .sge-root {
+    --sge-tools-h: 80px;
+  }
+  /* Two rows: document + actions on top, editing tools below. */
   .sge-tools {
-    display: flex;
-    gap: 4px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "left right" "center center";
+    gap: 0 8px;
+    padding: 0;
+  }
+  .sge-toolsLeft {
+    grid-area: left;
+    padding-left: 12px;
+  }
+  .sge-toolsRight {
+    grid-area: right;
+    padding-right: 12px;
+  }
+  .sge-toolsCenter {
+    grid-area: center;
+    justify-content: safe center;
+    height: 36px;
+    padding: 0 12px;
+    border-top: 1px solid var(--sge-border);
     overflow-x: auto;
     scrollbar-width: none;
   }
-  .sge-tools::-webkit-scrollbar {
+  .sge-toolsCenter::-webkit-scrollbar {
     display: none;
-  }
-  .sge-toolsLeft,
-  .sge-toolsRight {
-    display: none;
-  }
-  .sge-toolsCenter {
-    margin: 0 auto;
   }
   .sge-rail {
     display: none;
@@ -403,6 +423,11 @@
   color: #9ca3af;
   font-weight: 400;
   white-space: nowrap;
+}
+@media (max-width: 1365px) {
+  .sge-saved {
+    display: none;
+  }
 }
 .sge-tool:disabled {
   color: #c4c8d0;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { SerenNavbar } from "../SerenNavbar";
 import "./export.css";
 import { ResumePreview } from "./ResumePreview";
 import { downloadResumeDocx } from "./download";
@@ -57,12 +58,9 @@ export function ExportPage({ data, initialTemplate }: { data: ResumeData; initia
 
   return (
     <div className="sgx-root">
+      <SerenNavbar />
       <div className="sgx-toolbar">
         <div className="sgx-toolbarInner">
-          <a className="sgx-logo" href="/es" aria-label="Inicio de SerenGPT">
-            {/* eslint-disable-next-line @next/next/no-img-element -- static SVG logo */}
-            <img src="/sites/serengpt/serengpt-logo-ink.svg" alt="SerenGPT" width="110" height="28" />
-          </a>
           <a className="sgx-back" href="/es">
             ← Volver
           </a>

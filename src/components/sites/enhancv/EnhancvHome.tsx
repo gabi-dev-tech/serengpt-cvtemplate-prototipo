@@ -2,6 +2,7 @@ import "./tailwind-isolation.css";
 import "./enhancv.css";
 import "./serengpt-brand.css";
 import { RevealOnScroll } from "./RevealOnScroll";
+import { SerenNavbar } from "./SerenNavbar";
 import { AiAssistant } from "./sections/AiAssistant";
 import { AtsSection } from "./sections/AtsSection";
 import { Cards } from "./sections/Cards";
@@ -10,7 +11,6 @@ import { Faq } from "./sections/Faq";
 import { Features } from "./sections/Features";
 import { Footer } from "./sections/Footer";
 import { ForApplicants } from "./sections/ForApplicants";
-import { Header } from "./sections/Header";
 import { Hero } from "./sections/Hero";
 import { Quotes } from "./sections/Quotes";
 import { ResumePicker } from "./sections/ResumePicker";
@@ -22,9 +22,9 @@ import { Support } from "./sections/Support";
 export function EnhancvHome() {
   return (
     <div className="font-body">
+      {/* Outside the overflow-x-hidden wrapper, which would break position: sticky. */}
+      <SerenNavbar />
       <div className="default-layout enhancv-homepage bg-neutral-subtle overflow-x-hidden">
-        <Header />
-        <div className="_3SyHWa_spacer" aria-hidden="true" />
         <main>
           <Hero />
           <Cards />

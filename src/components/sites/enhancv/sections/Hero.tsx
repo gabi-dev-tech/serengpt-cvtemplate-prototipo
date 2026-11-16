@@ -2,6 +2,7 @@
 import { HeroCard } from "./HeroCard";
 import { HeroCardSlot } from "./HeroCardSlot";
 import { TemplateCarousel } from "./TemplateCarousel";
+import { sg } from "../serengpt-links";
 
 export function Hero() {
   return (
@@ -22,7 +23,7 @@ export function Hero() {
                 <a href="/es/crear-cv" className="Button-module__button--bJF6M col-12-xsm full-width-xsm" data-button-color="brand" data-size="lg" data-type="primary">
                   <span className="Button-module__label--V1tZC">Crea Tu CV</span>
                 </a>
-                <a href="https://enhancv.com/es/cv-checker/" className="Button-module__button--bJF6M col-12-xsm full-width-xsm" data-button-color="neutral" data-size="lg" data-type="secondary">
+                <a href={sg.employability} className="Button-module__button--bJF6M col-12-xsm full-width-xsm" data-button-color="neutral" data-size="lg" data-type="secondary">
                   <span className="Button-module__label--V1tZC">Obtén Tu Puntuación de CV</span>
                 </a>
               </div>

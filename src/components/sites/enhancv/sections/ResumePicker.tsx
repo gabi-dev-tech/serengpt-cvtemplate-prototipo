@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import { cx } from "../cx";
 import { jobExamples } from "../data";
+import { sg } from "../serengpt-links";
 
 /** Same hook as the source: starts as "mobile" (server render) and follows window.innerWidth <= 768. */
 function useIsMobile(max = 768) {
@@ -96,7 +97,7 @@ export function ResumePicker() {
                     Con Enhancv creas el currículum adecuado para tu trabajo y tu experiencia
                   </h2>
                   <a
-                    href="https://enhancv.com/es/ejemplos-de-cv/"
+                    href={sg.myCv}
                     className="Button-module__button--bJF6M"
                     data-button-color="awake"
                     data-size="md"
@@ -155,7 +156,7 @@ export function ResumePicker() {
                 ))}
               </div>
               <div className="col-5 col-12-xsm p-top-32 col-7-lg col-7-md col-12-xsm">
-                <a href={`https://enhancv.com/es/ejemplos-de-cv/${job.slug}/`}>
+                <a href={sg.myCv}>
                   <div className="VKA3na_exampleImageContainer m-auto">
                     <img
                       key={job.slug}
