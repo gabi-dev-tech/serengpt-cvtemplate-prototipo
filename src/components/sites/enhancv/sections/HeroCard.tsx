@@ -1,0 +1,29 @@
+/* eslint-disable @next/next/no-img-element -- source images are served as-is from public/sites/enhancv to keep their exact crop and sizing */
+
+/** Animated stack of resumes shown in the hero (CSS keyframes from the source). */
+export function HeroCard() {
+  return (
+    <div className="col-5 col-12-md col-12-xsm relative animation-zoom-in p-8-xsm m-top-72-sm m-top-16-xsm coKiwq_homepage">
+      <div className="coKiwq_card">
+        <div className="coKiwq_content">
+          <div className="coKiwq_front">
+            <div className="relative">
+              <img alt="Imagen de CV 1" width="430" height="608" className="coKiwq_resumeOne" src="/sites/enhancv/fold-section_es_resume1.webp" style={{"color": "transparent", "height": "auto", "zIndex": "1"}} />
+              <img alt="Imagen de CV 3" loading="lazy" width="560" height="575" className="coKiwq_resumeThree" src="/sites/enhancv/fold-section_es_resume3.webp" style={{"color": "transparent", "width": "100%", "height": "auto", "zIndex": "1"}} />
+            </div>
+          </div>
+          <div className="coKiwq_back">
+            <div className="coKiwq_resumeTwoContainer">
+              <img alt="Imagen de CV 2" width="366" height="518" className="coKiwq_resumeTwo" src="/sites/enhancv/fold-section_es_resume2.webp" style={{"color": "transparent"}} />
+            </div>
+            <div className="coKiwq_resumeFourContainer">
+              <div className="coKiwq_resumeFour">
+                <img alt="Imagen de CV 4" loading="lazy" width="594" height="612" src="/sites/enhancv/fold-section_es_resume4.webp" style={{"color": "transparent", "width": "100%", "height": "auto", "zIndex": "1"}} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

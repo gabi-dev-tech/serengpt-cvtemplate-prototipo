@@ -1,0 +1,349 @@
+/* Export page (/es/exportar). Class names are prefixed with sgx- so they never touch the clone's CSS. */
+
+@font-face {
+  font-family: "SGX Inter";
+  src: url("/sites/enhancv/export/fonts/Inter-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "SGX Inter";
+  src: url("/sites/enhancv/export/fonts/Inter-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: block;
+}
+@font-face {
+  font-family: "SGX Rubik";
+  src: url("/sites/enhancv/export/fonts/Rubik-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "SGX Rubik";
+  src: url("/sites/enhancv/export/fonts/Rubik-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "SGX Lora";
+  src: url("/sites/enhancv/export/fonts/Lora-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "SGX Lora";
+  src: url("/sites/enhancv/export/fonts/Lora-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: block;
+}
+
+/* SerenGPT UI font (toolbar and picker only; the CV pages use the template fonts above). */
+@font-face {
+  font-family: "SGX Manrope";
+  src: url("/sites/serengpt/fonts/Manrope-Variable-latin.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+.sgx-root {
+  min-height: 100vh;
+  background: #f7f6f3;
+  font-family: "SGX Inter", system-ui, sans-serif;
+  color: #1f2937;
+}
+
+.sgx-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+  font-family: "SGX Manrope", system-ui, sans-serif;
+}
+.sgx-toolbarInner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 12px 16px;
+}
+.sgx-logo {
+  display: flex;
+  flex: none;
+}
+.sgx-logo img {
+  display: block;
+  width: auto;
+  height: 28px;
+}
+.sgx-back {
+  color: #6b7280;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.sgx-back:hover {
+  color: #be2817;
+}
+.sgx-title {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+.sgx-title strong {
+  font-size: 17px;
+  font-weight: 700;
+  color: #212739;
+}
+.sgx-download {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 18px;
+  background: #e44230;
+  color: #fff;
+  font: 700 14px "SGX Manrope", system-ui, sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sgx-download:hover {
+  background: #be2817;
+}
+.sgx-download:focus-visible,
+.sgx-pickerButton:focus-visible,
+.sgx-pickerItem:focus-visible {
+  outline: 2px solid #f5503e;
+  outline-offset: 2px;
+}
+.sgx-download:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+.sgx-error {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 16px 12px;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+.sgx-stage {
+  padding: 24px 16px 48px;
+}
+.sgx-zoom {
+  width: max-content;
+  margin: 0 auto;
+}
+
+/* ---------- A4 page: every measure comes from spec.ts, in points ---------- */
+.sgx-pagesView {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.sgx-page {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 16px rgb(15 23 42 / 0.12);
+}
+.sgx-rect {
+  position: absolute;
+}
+.sgx-photo {
+  position: absolute;
+  display: block;
+}
+.sgx-col {
+  position: absolute;
+}
+.sgx-measure {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  visibility: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+.sgx-measure > div {
+  flex: none;
+}
+
+/* Text: no ligatures/contextual alternates (Word applies none), kerning on (the .docx enables it). */
+.sgx-p {
+  position: relative;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  font-kerning: normal;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  text-rendering: geometricPrecision;
+}
+.sgx-tabRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 8pt;
+}
+.sgx-hang {
+  display: inline-block;
+  text-indent: 0;
+  white-space: nowrap;
+}
+
+/* ---------- template picker ---------- */
+.sgx-picker {
+  position: relative;
+}
+.sgx-pickerButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 7px 12px;
+  background: #fff;
+  color: #212739;
+  font: 400 14px "SGX Manrope", system-ui, sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sgx-pickerButton:hover {
+  border-color: #ffaba2;
+}
+.sgx-pickerLabel {
+  color: #6b7280;
+  font-size: 12px;
+}
+.sgx-pickerValue {
+  font-weight: 700;
+}
+.sgx-pickerChevron {
+  color: #6b7280;
+  font-size: 11px;
+}
+.sgx-pickerPanel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 20;
+  width: min(560px, calc(100vw - 32px));
+  max-height: min(70vh, 640px);
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 8px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(16, 24, 40, 0.06);
+}
+.sgx-pickerItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: none;
+  text-align: left;
+  font: 400 12px/1.4 "SGX Manrope", system-ui, sans-serif;
+  color: #6b7280;
+  cursor: pointer;
+}
+.sgx-pickerItem:hover {
+  background: #f7f6f3;
+}
+.sgx-pickerItem[aria-selected="true"] {
+  border-color: #e44230;
+  background: #fef3f2;
+}
+.sgx-pickerText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sgx-pickerText strong {
+  color: #212739;
+  font-size: 14px;
+}
+.sgx-thumb {
+  position: relative;
+  flex: none;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px #e5e7eb;
+}
+.sgx-thumbRect,
+.sgx-thumbPhoto,
+.sgx-thumbCol {
+  position: absolute;
+}
+.sgx-thumbPhoto {
+  border-radius: 50%;
+  background: #c0c5d1;
+  box-shadow: 0 0 0 1px #fff;
+}
+.sgx-thumbCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sgx-thumbName {
+  width: 70%;
+  height: 4px;
+  border-radius: 1px;
+  margin-bottom: 1px;
+}
+.sgx-thumbSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+.sgx-thumbHeading {
+  width: 40%;
+  height: 2px;
+}
+.sgx-thumbLine {
+  display: block;
+  height: 1.5px;
+  border-radius: 1px;
+}
+
+@media (max-width: 640px) {
+  .sgx-title span {
+    display: none;
+  }
+  .sgx-logo img {
+    height: 24px;
+  }
+  .sgx-toolbarInner {
+    flex-wrap: wrap;
+  }
+}
+
+/* "Página N" separator between pages (editor view only, see ResumePreview pageLabels). */
+.sgx-pageLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  height: 53px;
+  color: #212739;
+  font: 400 15px "SGX Manrope", system-ui, sans-serif;
+}
+.sgx-pageLabel::before,
+.sgx-pageLabel::after {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: #212739;
+}

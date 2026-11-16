@@ -1,0 +1,197 @@
+/* Top bar shared by the home page (sections/Header.tsx) and the CV editor (/es/crear-cv).
+   Same look in both: 40px white bar, SerenGPT mark + "Inicio", compact 28px controls. */
+
+@font-face {
+  font-family: "SGX Manrope";
+  src: url("/sites/serengpt/fonts/Manrope-Variable-latin.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+.sge-top {
+  --sge-ink: #212739;
+  --sge-border: #e5e7eb;
+  --sge-brand: #e44230;
+  --sge-brand-hover: #be2817;
+  --sge-brand-soft: #fef3f2;
+  --sge-surface: #f7f6f3;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 40px;
+  padding: 0 12px;
+  background: #fff;
+  border-bottom: 1px solid var(--sge-border);
+  color: var(--sge-ink);
+  font: 400 13px/1.4 "SGX Manrope", system-ui, sans-serif;
+}
+.sge-top svg {
+  flex: none;
+}
+.sge-top :focus-visible {
+  outline: 2px solid #f5503e;
+  outline-offset: 2px;
+}
+.sge-topLeft,
+.sge-topRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+.sge-home {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--sge-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+.sge-home img {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+.sge-home:hover span {
+  color: var(--sge-brand-hover);
+}
+.sge-sep {
+  flex: none;
+  width: 1px;
+  height: 20px;
+  background: var(--sge-border);
+}
+.sge-primary,
+.sge-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 6px;
+  font-weight: 700 !important;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sge-primary {
+  border: 0;
+  background: var(--sge-brand);
+  color: #fff;
+}
+.sge-primary svg {
+  width: 16px;
+  height: 16px;
+}
+.sge-primary:hover {
+  background: var(--sge-brand-hover);
+  color: #fff;
+}
+.sge-primary:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+.sge-secondary {
+  border: 1px solid var(--sge-border);
+  background: #fff;
+  color: var(--sge-ink);
+}
+.sge-secondary:hover {
+  border-color: #ffaba2;
+  color: var(--sge-ink);
+}
+.sge-avatar {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #c0c5d1;
+  color: #fff;
+}
+.sge-avatar svg {
+  width: 20px;
+  height: 20px;
+}
+@media (max-width: 640px) {
+  .sge-primary span,
+  .sge-home span,
+  .sge-topLeft .sge-sep {
+    display: none;
+  }
+  .sge-primary {
+    padding: 0 8px;
+  }
+}
+
+/* ---------- home header: the clone's menus keep working, sized to the 40px bar ---------- */
+header._3SyHWa_header {
+  background: #fff;
+  box-shadow: none;
+}
+div._3SyHWa_spacer {
+  height: 40px;
+}
+.sg-homeTop ._3SyHWa_navLink {
+  color: var(--sge-ink);
+}
+@media (min-width: 993px) {
+  .sg-homeTop ._3SyHWa_nav {
+    align-self: auto;
+    gap: 4px;
+  }
+  /* Same metrics as the editor's tool buttons: gray on hover, brand tint while its menu is open. */
+  .sg-homeTop ._3SyHWa_navLink {
+    gap: 6px;
+    height: 28px;
+    padding: 0 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 28px;
+  }
+  .sg-homeTop ._3SyHWa_navLink:hover {
+    background: var(--sge-surface);
+    color: var(--sge-ink);
+  }
+  .sg-homeTop ._3SyHWa_navLinkActive,
+  .sg-homeTop ._3SyHWa_navLinkActive:hover {
+    background: var(--sge-brand-soft);
+    color: var(--sge-brand-hover);
+  }
+  /* Hover bridge from the link down to its menu. */
+  .sg-homeTop ._3SyHWa_navLinkActive::after {
+    height: 16px;
+  }
+  .sg-homeTop .OA73xG_dropdown {
+    top: 44px;
+    left: 12px;
+  }
+}
+@media (max-width: 992px) {
+  .sg-homeTop .sge-sep,
+  .sg-homeTop ._3SyHWa_btnDesktop {
+    display: none;
+  }
+  /* The mobile menu keeps the page's own text size. */
+  .sg-homeTop ._3SyHWa_nav {
+    font-size: var(--body-m-size);
+    line-height: 1.6;
+  }
+  .sg-homeTop ._3SyHWa_navOpen {
+    inset: 40px 0 0;
+  }
+  .sg-homeTop ._3SyHWa_menuToggle {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+  }
+  .sg-homeTop ._3SyHWa_menuToggleIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
