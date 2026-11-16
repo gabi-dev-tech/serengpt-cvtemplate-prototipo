@@ -50,7 +50,7 @@ export const defaultCustom: Custom = { design: defaultDesign, customColors: [], 
  * Only accent-bearing fields change (titles, headings, rules, company names, bullets, bands, strips…).
  */
 const ACCENTS: Record<string, { main: string; tints?: string[]; shades?: string[] }> = {
-  "dos-columnas": { main: "2BB3A3" },
+  "dos-columnas": { main: "E44230" },
   clasico: { main: "111111" },
   minimalista: { main: "6B7280", tints: ["9CA3AF"] },
   moderno: { main: "3B4CCA", tints: ["D7DCFF"] },
