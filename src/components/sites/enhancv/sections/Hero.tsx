@@ -4,6 +4,12 @@ import { HeroCardSlot } from "./HeroCardSlot";
 import { TemplateCarousel } from "./TemplateCarousel";
 import { sg } from "../serengpt-links";
 
+const benefits = [
+  "Formato compatible con ATS",
+  "Descarga en Word (.docx)",
+  "Pensado para el mercado laboral suizo",
+];
+
 export function Hero() {
   return (
     <div data-section="hero" style={{"display": "contents"}}>
@@ -16,15 +22,15 @@ export function Hero() {
             <div className="col-7 col-12-md col-12-xsm m-bottom-96 m-bottom-0-lg p-bottom-80 p-bottom-40-lg m-bottom-0-xsm m-bottom-0-md p-bottom-0-md p-bottom-0-xsm">
               <h1 className="Text-module__text--BrHx7 m-top-32 m-top-24-xsm text-align-center-xsm m-bottom-16" data-variant="display-xl">
                 <span className="P6Mlfq_headerGradientHome">Crear CV con IA</span>
-                : consigue más entrevistas con Enhancv
+                : destaca en el mercado laboral suizo con SerenGPT
               </h1>
-              <p className="Text-module__text--BrHx7 m-bottom-40 m-top-24-xsm m-bottom-32-xsm text-align-center-xsm" data-variant="body-m">Crea un CV profesional y compatible con ATS gracias a funciones como Redactor de CV con IA, Verificación ATS y Personalización con un clic. Es la mejor manera de causar una buena impresión.</p>
+              <p className="Text-module__text--BrHx7 m-bottom-40 m-top-24-xsm m-bottom-32-xsm text-align-center-xsm" data-variant="body-m">Crea un CV profesional y compatible con ATS a partir de tu perfil. SerenGPT analiza tus competencias y tu experiencia, te muestra cómo te leen los reclutadores y te ayuda a encontrar las ofertas en Suiza que mejor te corresponden.</p>
               <div className="flex gap-24 gap-32-xsm">
                 <a href="/es/crear-cv" className="Button-module__button--bJF6M col-12-xsm full-width-xsm" data-button-color="brand" data-size="lg" data-type="primary">
                   <span className="Button-module__label--V1tZC">Crea Tu CV</span>
                 </a>
-                <a href={sg.employability} className="Button-module__button--bJF6M col-12-xsm full-width-xsm" data-button-color="neutral" data-size="lg" data-type="secondary">
-                  <span className="Button-module__label--V1tZC">Obtén Tu Puntuación de CV</span>
+                <a href={sg.cvAnalysis} className="Button-module__button--bJF6M col-12-xsm full-width-xsm" data-button-color="neutral" data-size="lg" data-type="secondary">
+                  <span className="Button-module__label--V1tZC">Analiza Tu CV</span>
                 </a>
               </div>
               <HeroCardSlot variant="inline">
@@ -33,37 +39,12 @@ export function Hero() {
                 </div>
               </HeroCardSlot>
               <div className="m-top-32 m-top-16-xsm flex gap-24 flex-justify-center-xsm">
-                <a href="https://www.reviews.io/company-reviews/store/enhancv-com" target="_blank" rel="noreferrer" className="BSLg4q_widgetLink">
-                  <div className="flex flex-align-center flex-justify-center-xsm text-align-center BSLg4q_reviewsWidget BSLg4q_hideExcellent">
-                    <div className="flex BSLg4q_rating">
-                      <span className="BSLg4q_star">
-                        <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-star-fill text-white" style={{"fontSize": "18px"}} />
-                      </span>
-                      <span className="BSLg4q_star">
-                        <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-star-fill text-white" style={{"fontSize": "18px"}} />
-                      </span>
-                      <span className="BSLg4q_star">
-                        <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-star-fill text-white" style={{"fontSize": "18px"}} />
-                      </span>
-                      <span className="BSLg4q_star">
-                        <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-star-fill text-white" style={{"fontSize": "18px"}} />
-                      </span>
-                      <div className="BSLg4q_star BSLg4q_half">
-                        <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-star-fill text-white" style={{"fontSize": "18px"}} />
-                      </div>
-                    </div>
-                    <div className="Text-module__text--BrHx7 m-no-left-xsm m-top-4-xsm full-width-xsm" data-variant="body-s" data-color="inherit">
-                      <b>5369 reseñas</b>
-                    </div>
+                {benefits.map((benefit) => (
+                  <div key={benefit} className="flex flex-nowrap flex-align-center">
+                    <i aria-hidden="true" className="Icon-module__icon--5oSUz icon-ui-check-circle text-color-brand m-right-8" />
+                    <span className="Text-module__text--BrHx7" data-variant="body-s">{benefit}</span>
                   </div>
-                </a>
-                <div className="flex flex-nowrap gap-8 gap-16-xsm flex-align-center">
-                  <img alt="" width="50" height="50" className="hidden-xsm" style={{"color": "transparent"}} src="/sites/enhancv/media/conversationIcon.13uerg4uxalm7.webp" />
-                  <p className="Text-module__text--BrHx7" data-variant="body-s">
-                    <b>28.452 usuarios</b>
-                    {" consiguieron entrevistas el mes pasado"}
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
             <HeroCardSlot variant="column">

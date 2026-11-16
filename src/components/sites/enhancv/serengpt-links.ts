@@ -14,6 +14,7 @@ export const sg = {
   jobInterview: `${SG_BASE}/job-interview`,
   employability: `${SG_BASE}/employability`,
   recruiterZone: `${SG_BASE}/recruiter-zone`,
+  cvAnalysis: `${SG_BASE}/recruiter-zone/cv-analysis`,
   blog: `${SG_BASE}/blog`,
   news: `${SG_BASE}/news`,
   resources: `${SG_BASE}/resources`,
