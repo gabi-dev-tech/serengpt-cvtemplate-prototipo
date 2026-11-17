@@ -130,6 +130,19 @@ export function ResumePreview({
   const cols = useMemo(() => columnsOf(template), [template]);
   const topRef = useRef<HTMLDivElement>(null);
   const colRefs = useRef<(HTMLDivElement | null)[]>([]);
+  // The view is scaled with a transform, which does not shrink its layout box, so the frame around it
+  // takes the scaled size. Its unscaled height is observed (page count and labels change it).
+  const viewRef = useRef<HTMLDivElement>(null);
+  const [viewHeight, setViewHeight] = useState(0);
+  useLayoutEffect(() => {
+    const el = viewRef.current;
+    if (!el) return;
+    const update = () => setViewHeight(el.offsetHeight);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   // Pagination is only valid for the layout it was measured on; after a template change the
   // previous one would point at blocks that no longer exist, so it is ignored until re-measured.
   const [measured, setMeasured] = useState<{ layout: Layout; pages: PageAssignment } | null>(null);
@@ -188,7 +201,14 @@ export function ResumePreview({
         ))}
       </div>
 
-      <div className="sgx-pagesView" style={{ zoom: scale }}>
+      {/* Scaled with transform, not `zoom`: Safari clamps zoomed text to its minimum font size (9px)
+          while line heights keep shrinking, so small previews (thumbnails, phones) overlap their lines. */}
+      <div className="sgx-pagesFrame" style={{ width: `${page.width * scale}pt`, height: viewHeight ? viewHeight * scale : undefined }}>
+      <div
+        className="sgx-pagesView"
+        ref={viewRef}
+        style={{ width: `${page.width}pt`, transform: scale !== 1 ? `scale(${scale})` : undefined, transformOrigin: "0 0" }}
+      >
       {Array.from({ length: pageCount }, (_, p) => {
         const { rects, photo } = decorationsFor(template, p, topHeight);
         const bodyTop = template.margins.top + (p === 0 ? topHeight : 0);
@@ -241,6 +261,7 @@ export function ResumePreview({
           </Fragment>
         );
       })}
+      </div>
       </div>
     </div>
   );
