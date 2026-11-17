@@ -1,11 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type TransitionEvent } from "react";
 import { cx } from "../cx";
 import { templates } from "../export/templates";
 import { TemplateThumb } from "./TemplateThumb";
 
-const TRANSITION = "transform 0.6s ease-in-out";
+const TRANSITION_MS = 600;
+const TRANSITION = `transform ${TRANSITION_MS}ms ease-in-out`;
 const AUTO_SCROLL_MS = 4000;
 
 /** Same breakpoints as the source carousel: 1 card < 768px, 3 cards < 1024px, otherwise 5. */
@@ -38,8 +39,8 @@ export function TemplateCarousel() {
   const [animating, setAnimating] = useState(false);
   const [direction, setDirection] = useState<"next" | "prev" | null>(null);
   const [autoScroll, setAutoScroll] = useState(true);
-  const touchStart = useRef<number | null>(null);
-  const touchEnd = useRef<number | null>(null);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const touchEnd = useRef<{ x: number; y: number } | null>(null);
 
   const next = useCallback(
     (fromTimer = false) => {
@@ -66,7 +67,8 @@ export function TemplateCarousel() {
     );
   }, [animating]);
 
-  const onTransitionEnd = () => {
+  const finish = () => {
+    if (!animating) return;
     if (direction === "next") {
       setOrder((o) => [...o.slice(1), o[0]]);
       setOffset(0);
@@ -74,6 +76,25 @@ export function TemplateCarousel() {
     setAnimating(false);
     setDirection(null);
   };
+
+  // transitionend bubbles: the cards' own transitions (hover background) must not end the slide.
+  const onTransitionEnd = (e: TransitionEvent<HTMLDivElement>) => {
+    if (e.target !== e.currentTarget || e.propertyName !== "transform") return;
+    finish();
+  };
+
+  // Safety net: if the browser never delivers transitionend (Safari can drop it when the transition is
+  // throttled or cancelled, e.g. offscreen or in a background tab), `animating` would stay true and every
+  // later step, the autoplay included, would be ignored.
+  const finishRef = useRef(finish);
+  useEffect(() => {
+    finishRef.current = finish;
+  });
+  useEffect(() => {
+    if (!animating) return;
+    const id = setTimeout(() => finishRef.current(), TRANSITION_MS + 150);
+    return () => clearTimeout(id);
+  }, [animating]);
 
   const nextRef = useRef(next);
   useEffect(() => {
@@ -89,7 +110,10 @@ export function TemplateCarousel() {
 
   const onTouchEnd = () => {
     if (touchStart.current === null || touchEnd.current === null) return;
-    const delta = touchStart.current - touchEnd.current;
+    const delta = touchStart.current.x - touchEnd.current.x;
+    // Only a horizontal swipe counts: scrolling the page with a finger over the carousel (iOS) drifts
+    // sideways too, and treating that as a swipe used to switch the autoplay off for good.
+    if (Math.abs(delta) <= Math.abs(touchStart.current.y - touchEnd.current.y)) return;
     if (delta > 30) next();
     else if (delta < -30) prev();
   };
@@ -115,10 +139,10 @@ export function TemplateCarousel() {
                   onTransitionEnd={onTransitionEnd}
                   onTouchStart={(e) => {
                     touchEnd.current = null;
-                    touchStart.current = e.targetTouches[0].clientX;
+                    touchStart.current = { x: e.targetTouches[0].clientX, y: e.targetTouches[0].clientY };
                   }}
                   onTouchMove={(e) => {
-                    touchEnd.current = e.targetTouches[0].clientX;
+                    touchEnd.current = { x: e.targetTouches[0].clientX, y: e.targetTouches[0].clientY };
                   }}
                   onTouchEnd={onTouchEnd}
                   style={{
